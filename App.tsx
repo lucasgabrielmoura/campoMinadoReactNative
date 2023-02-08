@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Field from './src/components/Field';
+import params from "./src/params"
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.welcome}>Iniciando o Mines!!!</Text>
+      <Text>Tamanho de grade: {params.getColumnsAmount()}x{params.getRowsAmount()}</Text>
+      <Field nearMines={0}/>
+      <Field opened nearMines={0}/>
+      <Field opened nearMines={2} />
     </View>
   );
 }
@@ -17,4 +21,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  welcome: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
 });
